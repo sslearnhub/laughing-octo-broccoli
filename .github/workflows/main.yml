@@ -1,8 +1,8 @@
-name: Deploy ASP>NET CORE
+name: Deploy ASP.NET CORE
 on:
   push:
     branches:
-      - master
+      - main
 
 env:
   AZURE_WEBAPP_NAME: sswebappa1
