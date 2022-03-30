@@ -20,7 +20,7 @@ jobs:
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: SETUP .NET CORE
-        uses : actions/setupdotnet@v1
+        uses : actions/setup-dotnet@v1
         with: 
           dotnet-version: ${{ env.DOTNET_VERSION}}
 
@@ -28,7 +28,7 @@ jobs:
         run: |
           dotnet build --configuration release
           dotnet publish - c Release -o '${{ env.AZURE_WEBAPP_PATH }}/myapp'
-          
+
       - name: Deploy to APP Service
         uses: azure/webapps-deploy@v2
         with: 
